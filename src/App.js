@@ -1,14 +1,29 @@
 import React from 'react';
+
+// Import CSS
 import './App.css';
-import Child from './Child.js';
+
+// Import Components
+import { Header } from './Header';
+import { Balance } from './Balance';
+import { AccountSummary } from './AccountSummary';
+import { TransactionHistory } from './TransactionHistory';
+import { AddTransaction } from './AddTransaction';
+
+// Import Provider
+import { GlobalProvider } from './GlobalState';
 
 function App() {
   return (
-    <div>
-      
-      <Child />
-    </div>
-    
+      <GlobalProvider>
+        <Header />
+        <div className="container">
+          <Balance />
+          <AccountSummary />
+          <TransactionHistory />
+          <AddTransaction />
+        </div>
+      </GlobalProvider>
   );
 }
 
